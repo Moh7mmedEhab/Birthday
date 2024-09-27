@@ -8,8 +8,6 @@ let day = new Date().getDay();
 
 let year = new Date().getFullYear();
 
-;
-
 setInterval(() => {
 
     let time = new Date(`Sep, 30, ${year}, 00:00:00`).getTime();
