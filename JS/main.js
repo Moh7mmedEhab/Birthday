@@ -4,7 +4,7 @@ let year = new Date().getFullYear();
 
 setInterval(() => {
 
-    let time = new Date(`Aug, 30, ${year}, 00:00:00`).getTime();
+    let time = new Date(`Sep, 30, ${year}, 00:00:00`).getTime();
 
     let now = new Date().getTime();
 
