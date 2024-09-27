@@ -16,7 +16,7 @@ setInterval(() => {
 
     let seconds = Math.floor(dis / (1000));
 
-    timer.innerText = `${days}d : ${hours % 24}h : ${minutes % 60}m : ${seconds % 60}s`;
+    timer.innerText = `${days.toString().padStart(2, "0")}d : ${(hours % 24).toString().padStart(2, "0")}h : ${(minutes % 60).toString().padStart(2, "0")}m : ${(seconds % 60).toString().padStart(2, "0")}s`;
 
     if (dis < 0) {
 
