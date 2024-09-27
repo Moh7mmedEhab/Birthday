@@ -8,29 +8,33 @@ let day = new Date().getDay();
 
 let year = new Date().getFullYear();
 
+let date_day = "30";
+
+let date_month = "9";
+
+let date_hms = "00:00:00";
+
+let date = `${date_month}, ${date_day}, ${year}, ${date_hms}`;
+
 setInterval(() => {
 
-    let time = new Date(`Sep, 30, ${year}, 00:00:00`).getTime();
-
-    let time_cpy = new Date(`Sep, 30, ${year}, 00:00:00`).getDay();
+    let time = new Date(date);
 
     let now = new Date().getTime();
 
-    let dis = time - now;
+    let dis = time.getTime() - now;
 
     if (dis < 0) {
 
         year += 1;
 
-        time = new Date(`Sep, 30, ${year}, 00:00:00`).getTime();
+        time = new Date(date);
 
-        time_cpy = new Date(`Sep, 30, ${year}, 00:00:00`).getDay();
-
-        dis = time - now;
+        dis = time.getTime() - now;
 
     }
 
-    head.innerText = `${week_days[time_cpy]} | 30-9-${year}`
+    head.innerText = `${week_days[time.getDay()]} | ${date_day}-${date_month}-${year}`
 
     let days = Math.floor(dis / (1000 * 60 * 60 * 24));
 
