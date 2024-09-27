@@ -1,39 +1,49 @@
-body {
+let timer = document.querySelector("#countdown");
 
-    margin: 0;
+let head = document.querySelector("#date");
 
-    padding: 0;
+let week_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    font-family: 'Courier New', Courier, monospace;
+let day = new Date().getDay();
 
-    display: flex;
+let year = new Date().getFullYear();
 
-    justify-content: center;
+let date_day = "30";
 
-    align-items: center;
+let date_month = "9";
 
-    height: 100vh;
+let date_hms = "00:00:00";
 
-    background-color: #f0f0f0;
+let date = `${date_month}, ${date_day}, ${year}, ${date_hms}`;
 
-}
+setInterval(() => {
 
-h1 {
+    let time = new Date(date);
 
-    position: absolute;
+    let now = new Date().getTime();
 
-    top: 2.5vh;
+    let dis = time.getTime() - now;
 
-    text-align: center;
+    if (dis < 0) {
 
-}
+        year += 1;
 
-#countdown {
+        time = new Date(date);
 
-    text-align: center;
+        dis = time.getTime() - now;
 
-    font-size: 1.4em;
+    }
 
-    font-weight: bold;
+    head.innerText = `${week_days[time.getDay()]} | ${date_day}-${date_month}-${year}`
 
-}
+    let days = Math.floor(dis / (1000 * 60 * 60 * 24));
+
+    let hours = Math.floor(dis / (1000 * 60 * 60));
+
+    let minutes = Math.floor(dis / (1000 * 60));
+
+    let seconds = Math.floor(dis / (1000));
+
+    timer.innerText = `${days.toString().padStart(2, "0")}d : ${(hours % 24).toString().padStart(2, "0")}h : ${(minutes % 60).toString().padStart(2, "0")}m : ${(seconds % 60).toString().padStart(2, "0")}s`;
+
+}, 10);
