@@ -1,10 +1,12 @@
 body {
-    
+
+    background-color: #ebebeb;
+
     margin: 0;
 
     padding: 0;
 
-    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
 
     display: flex;
 
@@ -12,28 +14,70 @@ body {
 
     align-items: center;
 
-    height: 100vh;
+    flex-direction: column;
 
-    background-color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
 h1 {
 
-    position: absolute;
+    margin: 1.2vh;
 
-    top: 2.5vh;
-
-    text-align: center;
+    font-size: 1.5em;
 
 }
 
-#countdown {
+#date {
 
     text-align: center;
 
-    font-size: 1.4em;
+    min-width: 25vw;
 
-    font-weight: bold;
+    margin: 1vh 0;
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    padding: 10px;
+
+    color: white;
+
+    background-color: #000000cb;
+
+    border-radius: 20px;
+
+}
+
+#date-c {
+
+    font-size: 1em;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+#container {
+
+    text-align: center;
+
+    min-width: 50vw;
+
+    margin: 1vh 0;
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    padding: 10px;
+
+    color: white;
+
+    background-color: #000000cb;
+
+    border-radius: 30px;
 
 }
