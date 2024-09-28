@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 
-    <html lang="en">
+<html lang="en">
 
-        <head>
+<head>
 
-             <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
-             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-             <title>Birthday</title>
+    <title>Birthday</title>
 
-             <link rel="stylesheet" href="CSS/style.css"/>
+    <link rel="icon" type="image/x-icon" href="Assets/icons/icon.ico"/>
 
-             <link rel="icon" href="Assets/icons/icon.ico">
+    <link rel="stylesheet" href="CSS/style.css"/>
 
-        </head>
+</head>
 
-        <body>
+<body>
 
-            <h1 id="date"></h1>
+    <h1>My Birthday</h1>
 
-            <p id="countdown"></p>
+    <div id="container">
 
-            <script src="JS/main.js"></script>
+        <div id="days">
 
-        </body>
+            <h3 id="days-c">00</h3>
 
-    </html>
+            <h4>Days</h4>
+
+        </div>
+
+        <div id="hours">
+
+            <h3 id="hours-c">00</h3>
+
+            <h4>Hours</h4>
+
+        </div>
+
+        <div id="minutes">
+
+            <h3 id="minutes-c">00</h3>
+
+            <h4>Minutes</h4>
+
+        </div>
+
+        <div id="seconds">
+
+            <h3 id="seconds-c">00</h3>
+
+            <h4>Seconds</h4>
+
+        </div>
+
+    </div>
+
+    <div id="date">
+
+        <p id="date-c">Day | 00-00-0000</p>
+
+    </div>
+
+</body>
+
+<script src="JS/main.js"></script>
+
+</html>
