@@ -1,6 +1,12 @@
-let timer = document.querySelector("#countdown");
+let daysC = document.querySelector("#days-c");
 
-let head = document.querySelector("#date");
+let hoursC = document.querySelector("#hours-c");
+
+let minutesC = document.querySelector("#minutes-c");
+
+let secondsC = document.querySelector("#seconds-c");
+
+let dateC = document.querySelector("#date-c");
 
 let week_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -10,7 +16,7 @@ let year = new Date().getFullYear();
 
 let date_day = "30";
 
-let date_month = "9";
+let date_month = "09";
 
 let date_hms = "00:00:00";
 
@@ -28,13 +34,15 @@ setInterval(() => {
 
         year += 1;
 
+        date = `${date_month}, ${date_day}, ${year}, ${date_hms}`;
+
         time = new Date(date);
 
         dis = time.getTime() - now;
 
     }
 
-    head.innerText = `${week_days[time.getDay()]} | ${date_day}-${date_month}-${year}`
+    dateC.innerText = `${week_days[time.getDay()]} | ${date_day}-${date_month}-${year}`
 
     let days = Math.floor(dis / (1000 * 60 * 60 * 24));
 
@@ -44,6 +52,12 @@ setInterval(() => {
 
     let seconds = Math.floor(dis / (1000));
 
-    timer.innerText = `${days.toString().padStart(2, "0")}d : ${(hours % 24).toString().padStart(2, "0")}h : ${(minutes % 60).toString().padStart(2, "0")}m : ${(seconds % 60).toString().padStart(2, "0")}s`;
+    daysC.innerText = `${days.toString().padStart(2, "0")}`;
 
-}, 10);
+    hoursC.innerText = `${(hours % 24).toString().padStart(2, "0")}`;
+
+    minutesC.innerText = `${(minutes % 60).toString().padStart(2, "0")}`;
+
+    secondsC.innerText = `${(seconds % 60).toString().padStart(2, "0")}`;
+
+}, 1);
